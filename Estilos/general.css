@@ -1,12 +1,9 @@
 #isc   
 {font-size:20px;color: green;}
-
 .isca
 {font-size:20px;color: crimson;}
-
 .iscb
 {font-size:20px;color: rgb(32, 32, 32);}
-
 body 
  {  
    background-image: url("../Archivos/background.jpg");
@@ -26,7 +23,6 @@ table tr td.banner
       font-family:Fantasy;
       text-align: center;
    }
-   
    table tr td.footer
    {
       background-color: black;
@@ -34,7 +30,6 @@ table tr td.banner
       font-family: Arial, Helvetica, sans-serif;
       color: whitesmoke;
    }
-
     .menu a 
     {
       background-image: url("../Archivos/sidebar.png");
@@ -48,21 +43,18 @@ table tr td.banner
       font-family: 'Segoe UI';
       font-size: 28px; 
     }
-    
     .menu a:hover 
     {
        background-image: none;
       background-color: rgb(46, 42, 42); 
       color: white;
     }
-    
     .menu a.activo 
     {
       background-image: none;
       background-color: red; 
       color: white;
     }
-
     table tr td.cuerpo
    {
     vertical-align: top;
@@ -73,7 +65,6 @@ table tr td.banner
     background-position: center;
     background-repeat: no-repeat;
    }
-
    .EjemImg 
   {
     display: block;
@@ -81,11 +72,21 @@ table tr td.banner
     margin-right: auto;
     width: 45%;
   }
-
   .EjemImg2 
   {
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 70%;
+  }
+  .esquina_der a
+  {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  font-size: 18px;
+  font-family: 'Segoe UI';
+  font-size: 24px;
+  color: white;
+  text-decoration:none;
   }
