@@ -42,7 +42,7 @@
             {
                 $mysqli = new mysqli("127.0.0.1", "rafa", "12345", "login2", 3306);
                 if ($mysqli->connect_errno) {
-                    echo "Fallo al conectar a MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
+                    echo "<br>Fallo al conectar a MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
                 }
                 // echo $mysqli->host_info . "<br>";
             
@@ -54,7 +54,7 @@
                 $query1 = $mysqli->query("SELECT * FROM usr WHERE usr.Usuario='$usuario' AND Contra='$pass'");
                 if($query1->num_rows != 1)
                 {  
-                     echo "\r\nUsuario y/o Contraseña incorrectos. Intente de nuevo";               
+                     echo "<br>Usuario y/o Contraseña incorrectos. Intente de nuevo";               
                      echo "<meta http-equiv=\"refresh\" content=\"3;url=http://192.168.1.69/logon.php\" />";
                 }
                 else
@@ -67,19 +67,22 @@
                     $query2->data_seek(0);
                     $fila = $query2->fetch_assoc();
                     $Des=$fila['Descripcion'];
-                    echo "\nBienvenido $Des $usrBD";
+                    echo "<br>Bienvenido $Des<br>";
+                    echo "$usrBD<br>"; 
+                    $fecha =new DateTime('NOW');
+                    echo"Fecha: ";
+                        echo $fecha->format('d/m/Y');
+                        echo"<br>Hora: "; 
+                        echo $fecha->format('h:i a');
                 }
             }
-    
     ?>
         </form>
             </div>
-        
         </td>
         <td></td> 
         </table>  
     </nav>
-    
         <footer>
             <table>
        <td></td> 
@@ -88,6 +91,5 @@
          <td></td>
         </table>
      </footer> 
-     
     </body>
 </html>
