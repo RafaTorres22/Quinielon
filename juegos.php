@@ -51,7 +51,7 @@
                     <th></th>
                     </tr>
                     <?php
-    $mysqli = new mysqli("127.0.0.1", "rafa", "12345", "login2");
+    $mysqli = new mysqli("127.0.0.1", "rafa", "12345", "Productos");
     if ($mysqli->connect_errno) 
     {
         echo "Error al conectar a MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
