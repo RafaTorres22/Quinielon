@@ -29,6 +29,9 @@
           <a href="form1.html">Registro</a></li>
           </div>
         </td>
+        <div class="esquina_der">
+        <a href="logon.php">Iniciar sesion</a>
+        </div>
         <td class ="cuerpo" width = "100%">
             <h1>Contacto</h1>
             Medios de contacto.<br>
@@ -63,7 +66,6 @@
      ?>
      </table>
              </div>
-            <img src="Archivos/MiCuenta.png" alt="Imagen de Prueba" class="EjemImg">
         </td>
         <td></td> 
         </table>  

@@ -29,7 +29,11 @@
           <a href="form1.html">Registro</a></li>
           <!-- <a href="test.php">tests</a></li> -->
           </div>
+          
         </td>
+        <div class="esquina_der">
+        <a href="logon.php">Iniciar sesion</a>
+        </div>
         <td class ="cuerpo" width = "100%">
             <h1>Juegos Actuales</h1>
             Aqui va una seccion con los partidos que se van a disputar proximamente 
