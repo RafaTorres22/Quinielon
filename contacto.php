@@ -25,14 +25,44 @@
           <a href="cuenta.html">Mi cuenta</a></li> 
           <a href="apuestas.html">Quinielas de apuestas</a></li> 
           <a href="acercade.html">Acerca de Nosotros</a></li>
-          <a class = "activo" href="contacto.html">Contacto</a></li> 
+          <a class = "activo" href="contacto.php">Contacto</a></li> 
           <a href="form1.html">Registro</a></li>
           </div>
         </td>
         <td class ="cuerpo" width = "100%">
             <h1>Contacto</h1>
             Medios de contacto.<br>
-            
+            <div class = "productos"> 
+                <table>
+                    <colgroup>
+                    <tr>              
+                    <th>Nombre</th>
+                    <th></th>
+                    <th>Telefono</th>
+                    <th></th>
+                    <th>No. de Control</th>
+                    <th></th>
+                    </tr>
+                    <?php
+    $mysqli = new mysqli("127.0.0.1", "rafa", "12345", "login2");
+    if ($mysqli->connect_errno) 
+    {
+        echo "Error al conectar a MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
+    }
+    $sql = "select Nombre,Telefono,No_Control from Contacto"; 
+    $res = $mysqli->query($sql);
+    while ($row = $res->fetch_assoc()) 
+    {
+        echo "<tr>";
+        foreach($row as $ind => $val)
+        {      
+            echo  "<td>$val<td/>";
+        }
+        echo "<tr/>";
+    } 
+     ?>
+     </table>
+             </div>
             <img src="Archivos/MiCuenta.png" alt="Imagen de Prueba" class="EjemImg">
         </td>
         <td></td> 

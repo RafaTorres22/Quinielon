@@ -25,7 +25,7 @@
           <a href="cuenta.html">Mi cuenta</a></li> 
           <a href="apuestas.html">Quinielas de apuestas</a></li> 
           <a href="acercade.html">Acerca de Nosotros</a></li>
-          <a href="contacto.html">Contacto</a></li>
+          <a href="contacto.php">Contacto</a></li>
           <a href="form1.html">Registro</a></li>
           </div>
         </td> 
@@ -41,16 +41,12 @@
             if($_POST)
             {
                 $mysqli = new mysqli("127.0.0.1", "rafa", "12345", "login2", 3306);
-                if ($mysqli->connect_errno) {
+                if ($mysqli->connect_errno) 
+                {
                     echo "<br>Fallo al conectar a MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
-                }
-                // echo $mysqli->host_info . "<br>";
-            
+                }    
                 $usuario= $_REQUEST['usr'];
                 $pass= $_REQUEST['pass'];
-                
-                // echo "<br> SELECT * FROM usr WHERE usr.Usuario='$usuario' AND Contra='$pass';<br>";
-                
                 $query1 = $mysqli->query("SELECT * FROM usr WHERE usr.Usuario='$usuario' AND Contra='$pass'");
                 if($query1->num_rows != 1)
                 {  
