@@ -4,11 +4,9 @@
         <meta charset="UTF-8"/>
         <meta name="description" content="titulo">
         <meta name="keywords" content="HTML5., CSS3, Javascript">
-        <title>LOGIN - QUINIELON</title>
+        <title>QUINIELON</title>
         <link href="Estilos/general.css" rel="stylesheet" type="text/css">
     </head>
-    <body>
-        
     <table border="0">
             <tr>
                 <td width= "0%"></td>
@@ -20,7 +18,7 @@
         <table>
             <td>   
           <div class="menu" >
-          <a href="index.php">Inicio</a></li>          
+          <a class = "activo" href="index.php">Inicio</a></li>          
           <a href="juegos.php">Juegos</a></li> 
           <a href="noticias.html">Noticias</a></li> 
           <a href="pago.html">Metodos de Pago</a></li> 
@@ -30,7 +28,7 @@
           <a href="contacto.php">Contacto</a></li>
           <a href="form1.html">Registro</a></li>
           </div>
-        </td> 
+        </td>
         <div class = "esquina_der">
             <form method="post">
             <label for="usr">Usuario:</label>
@@ -38,8 +36,6 @@
             <label for="pass">Contraseña:</label>
             <input type="password" id="pass" name="pass" value="">
             <input type="submit" value="Iniciar Sesion">
-            </div>
-        <td class ="cuerpo" width = "100%">
             
             <?php
             if($_POST)
@@ -76,13 +72,18 @@
                         echo $fecha->format('h:i a');
                 }
             }
-    ?>
-        </form>
+            ?>
             </div>
+        <td class ="cuerpo" width = "100%">
+          <h1>Apuestas de la Liga MX</h1>
+          Apuesta por tu equipo favorito, y si la suerte esta a tu favor, seras ganador! 
+           <BR>
+            <img src="Archivos/MX_logo.png" alt="Imagen de Prueba" class="EjemImg">
         </td>
         <td></td> 
         </table>  
     </nav>
+    
         <footer>
             <table>
        <td></td> 
@@ -90,7 +91,7 @@
          Página creada por Equipo 3 - Todos los derechos reservados</td>
          <td></td>
         </table>
-     </footer>
-      
+     </footer> 
+     
     </body>
 </html>
