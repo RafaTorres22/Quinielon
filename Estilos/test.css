@@ -1,0 +1,12 @@
+.esquina_der 
+  {
+  background-color: blanchedalmond;
+  position: absolute;
+  top: 18px;
+  right: 26px;
+  font-size: 14px;
+  font-family: 'Segoe UI';
+  color: red;
+  text-decoration:none;
+  text-align: right;
+  }

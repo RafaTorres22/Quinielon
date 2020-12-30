@@ -28,44 +28,39 @@
           <a class = "activo" href="contacto.php">Contacto</a></li> 
           <a href="form1.html">Registro</a></li>
           </div>
-        </td>
-        <div class="esquina_der">
-        <a href="logon.php">Iniciar sesion</a>
-        </div>
+        </td>   
         <td class ="cuerpo" width = "100%">
             <h1>Contacto</h1>
-            Medios de contacto.<br>
-            <div class = "productos"> 
-                <table>
-                    <colgroup>
-                    <tr>              
-                    <th>Nombre</th>
-                    <th></th>
-                    <th>Telefono</th>
-                    <th></th>
-                    <th>No. de Control</th>
-                    <th></th>
-                    </tr>
-                    <?php
-    $mysqli = new mysqli("127.0.0.1", "rafa", "12345", "login2");
-    if ($mysqli->connect_errno) 
-    {
-        echo "Error al conectar a MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
-    }
-    $sql = "select Nombre,Telefono,No_Control from Contacto"; 
-    $res = $mysqli->query($sql);
-    while ($row = $res->fetch_assoc()) 
-    {
-        echo "<tr>";
-        foreach($row as $ind => $val)
-        {      
-            echo  "<td>$val<td/>";
-        }
-        echo "<tr/>";
-    } 
-     ?>
-     </table>
-             </div>
+            Buzon de Quejas y Sugerencias<br>
+            <div >
+            <form method="post">
+            <label for="nomb">Nombre:</label><br>
+            <input type="text" id="nomb" name="nomb" value=""><br>
+            <label for="apell">Apellido:</label><br>
+            <input type="text" id="apell" name="apell" value=""><br>
+            <label for="mail">Email:</label><br>
+            <input type="text" id="mail" name="mail" value=""><br>
+            <label for="msj">Mensaje:</label><br>
+            <textarea name="msj" rows="4" cols="50"></textarea><br>
+            <input type="submit" value="Enviar">
+            </form>  
+            <?php
+            if($_POST)
+            {
+                $mysqli = new mysqli("127.0.0.1", "rafa", "12345", "login2", 3306);
+                if ($mysqli->connect_errno) 
+                {
+                    echo "<br>Fallo al conectar a MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
+                }    
+                $nomb= $_REQUEST['nomb'];
+                $apell= $_REQUEST['apell'];
+                $mail= $_REQUEST['mail'];
+                $msj= $_REQUEST['msj'];
+                $query1 = $mysqli->query("INSERT INTO Contacto (nombre,apellido,email,mensaje) VALUES ('$nomb','$apell','$mail', '$msj')");
+                        echo ('¡Gracias por sus comentarios!');   
+            }
+    ?>    
+            </div>
         </td>
         <td></td> 
         </table>  
@@ -79,6 +74,5 @@
          <td></td>
         </table>
      </footer> 
-     
     </body>
 </html>

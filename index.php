@@ -35,8 +35,7 @@
             <input type="text" id="usr" name="usr" value="">
             <label for="pass">Contraseña:</label>
             <input type="password" id="pass" name="pass" value="">
-            <input type="submit" value="Iniciar Sesion">
-            
+            <input type="submit" value="Iniciar Sesion">  
             <?php
             if($_POST)
             {
@@ -65,11 +64,11 @@
                     $Des=$fila['Descripcion'];
                     echo "<br>Bienvenido $Des<br>";
                     echo "$usrBD<br>"; 
-                    $fecha =new DateTime('NOW');
+                    $fecha = new DateTime('NOW');
                     echo"Fecha: ";
                         echo $fecha->format('d/m/Y');
                         echo"<br>Hora: "; 
-                        echo $fecha->format('h:i a');
+                        echo $fecha->format('h:i a');      
                 }
             }
             ?>
