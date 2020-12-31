@@ -27,6 +27,7 @@
           <a href="acercade.html">Acerca de Nosotros</a></li>
           <a href="contacto.php">Contacto</a></li>
           <a href="form1.html">Registro</a></li>
+          <a href="test.php">Registro</a></li>
           </div>
         </td>
         <div class = "esquina_der">
