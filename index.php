@@ -12,11 +12,11 @@
                 <td width= "0%"></td>
                 <td class="banner"colspan="6"width ="100%"><h1></h1> QUINIELÓN</h1></td>
                 <td width= "0%"></td>
-            </tr>
+            </tr>          
     </table>
     <nav>
         <table>
-            <td>   
+        <td>   
           <div class="menu" >
           <a class = "activo" href="index.php">Inicio</a></li>          
           <a href="juegos.php">Juegos</a></li> 
@@ -34,8 +34,9 @@
             <label for="usr">Usuario:</label>
             <input type="text" id="usr" name="usr" value="">
             <label for="pass">Contraseña:</label>
-            <input type="password" id="pass" name="pass" value="">
-            <input type="submit" value="Iniciar Sesion">  
+            <input type="password" id="pass" name="pass" value=""><br>
+            <input type="submit" value="Iniciar Sesion">
+            
             <?php
             if($_POST)
             {
@@ -64,11 +65,11 @@
                     $Des=$fila['Descripcion'];
                     echo "<br>Bienvenido $Des<br>";
                     echo "$usrBD<br>"; 
-                    $fecha = new DateTime('NOW');
+                    $fecha =new DateTime('NOW');
                     echo"Fecha: ";
                         echo $fecha->format('d/m/Y');
                         echo"<br>Hora: "; 
-                        echo $fecha->format('h:i a');      
+                        echo $fecha->format('h:i a');
                 }
             }
             ?>

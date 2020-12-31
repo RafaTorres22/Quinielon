@@ -83,17 +83,17 @@ table tr td.banner
     margin-right: auto;
     width: 70%;
   }
-  .esquina_der a
+  .esquina_der
   {
-  
-  position: absolute;
-  top: 18px;
-  right: 26px;
-  font-size: 14px;
-  font-family: 'Segoe UI';
-  color: white;
-  text-decoration:none;
-  text-align:right;
+    
+    position: absolute;
+    top: 18px;
+    right: 26px;
+    font-size: 14px;
+    font-family: 'Segoe UI';
+    color: white;
+    text-decoration:none;
+    text-align: right;
   }
   .login
   {
