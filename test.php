@@ -40,7 +40,17 @@
                     $query2->data_seek(0);
                     $fila = $query2->fetch_assoc();
                     $Des=$fila['Descripcion'];
-                    echo "<br>Bienvenido $Des<br>";
+                    while($id==1)
+                    {
+                        echo "<br>Bienvenido Administrador<br>";
+                        break;
+                    }
+                    While($id!=1)
+                    {
+                        echo "<br>Bienvenido Usuario<br>";
+                        break;
+                    }
+                    
                     echo "$usrBD<br>"; 
                     $fecha =new DateTime('NOW');
                     echo"Fecha: ";
