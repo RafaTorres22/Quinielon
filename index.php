@@ -31,14 +31,25 @@
           </div>
         </td>
         <div class = "esquina_der">
-            <form method="post">
+        <?php
+            $MostrarForm = TRUE;
+            if($_POST)
+            {
+                $MostrarForm = FALSE;
+            }
+            if ($MostrarForm)
+            {
+                ?>
+            <form action = index.php method="post">
             <label for="usr">Usuario:</label>
             <input type="text" id="usr" name="usr" value="">
             <label for="pass">Contraseña:</label>
             <input type="password" id="pass" name="pass" value=""><br>
             <input type="submit" value="Iniciar Sesion">
-            
+            </form>
             <?php
+            } 
+            {
             if($_POST)
             {
                 $mysqli = new mysqli("127.0.0.1", "rafa", "12345", "login2", 3306);
@@ -72,6 +83,7 @@
                         echo"<br>Hora: "; 
                         echo $fecha->format('h:i a');
                 }
+            }
             }
             ?>
             </div>
