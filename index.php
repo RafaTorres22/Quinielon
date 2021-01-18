@@ -26,8 +26,8 @@
           <a href="apuestas.html">Quinielas de apuestas</a></li> 
           <a href="acercade.html">Acerca de Nosotros</a></li>
           <a href="contacto.php">Contacto</a></li>
-          <a href="form1.html">Registro</a></li>
-          <a href="test.php">Tests</a></li>
+          <a href="form1.php">Registro</a></li>
+          <!-- <a href="test.php">Tests</a></li> -->
           </div>
         </td>
         <div class = "esquina_der">

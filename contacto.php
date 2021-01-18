@@ -26,7 +26,7 @@
           <a href="apuestas.html">Quinielas de apuestas</a></li> 
           <a href="acercade.html">Acerca de Nosotros</a></li>
           <a class = "activo" href="contacto.php">Contacto</a></li> 
-          <a href="form1.html">Registro</a></li>
+          <a href="form1.php">Registro</a></li>
           </div>
         </td>   
         <td class ="cuerpo" width = "100%">
