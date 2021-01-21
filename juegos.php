@@ -15,12 +15,11 @@
             </tr>
     </table>
     <nav>
-        <table>
-            <td>   
+           
           <div class="menu" >
           <a href="index.php">Inicio</a></li>          
           <a class = "activo" href="juegos.php">Juegos</a></li> 
-          <a href="noticias.html">Noticias</a></li> 
+          <a href="noticias.php">Noticias</a></li> 
           <a href="pago.html">Metodos de Pago</a></li> 
           <a href="cuenta.html">Mi cuenta</a></li> 
           <a href="apuestas.html">Quinielas de apuestas</a></li> 
@@ -30,7 +29,7 @@
           <a href="test.php">tests</a></li>
           </div>
           
-        </td>
+          <table>
         <div class = "esquina_der">
         <?php
             $MostrarForm = TRUE;

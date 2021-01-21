@@ -11,6 +11,7 @@ body
    background-repeat: no-repeat;
    background-attachment: fixed;
    background-position: center;
+   
  }
 table tr td.banner
    {  
@@ -24,49 +25,32 @@ table tr td.banner
       -webkit-text-stroke: 2px white;
       font-family:Fantasy;
       text-align: center;
+       
    }
    table tr td.footer
    {
+      position: fixed;
       background-color: black;
       font-size: 20px;
       font-family: Arial, Helvetica, sans-serif;
       color: whitesmoke;
+      margin-top: 800px;
+      width: 99%; 
    }
-    .menu a 
-    {
-      background-image: url("../Archivos/sidebar.png");
-      background-size: cover;
-      background-attachment: fixed;
-      color: black; 
-      display: block; 
-      padding: 12px;
-      text-align: left;
-      text-decoration:underline;
-      width: 200px; 
-      font-family: 'Segoe UI';
-      font-size: 28px; 
-    }
-    .menu a:hover 
-    {
-       background-image: none;
-      background-color: rgb(46, 42, 42); 
-      color: white;
-    }
-    .menu a.activo 
-    {
-      background-image: none;
-      background-color: red; 
-      color: white;
-    }
+    
     table tr td.cuerpo
    {
-    vertical-align: top;
+    margin-top: 74px;
+    padding-bottom: 550px;
+    position: absolute;
+    width: 99%; 
     color: black;
     font-size: 18px;
     font-family: 'Segoe UI';
     background-color: rgba(255, 255, 255, 0.705);
     background-position: center;
     background-repeat: no-repeat;
+    margin-bottom: 700px;
     
    }
    .EjemImg 
@@ -74,14 +58,14 @@ table tr td.banner
     display: block;
     margin-left: auto;
     margin-right: auto;
-  
+    width: 19%; 
   }
   .EjemImg2 
   {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 70%;
+    width: 19%;
   }
   .esquina_der
   {
@@ -105,3 +89,64 @@ table tr td.banner
     font-family: 'Segoe UI';
     font-size: 24px;
   }
+
+  /* Noticias */
+
+  #canvas{
+    
+    
+    color: black;
+    font-size: 18px;
+    font-family: 'Segoe UI';
+    
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 99%; 
+}
+
+#heading{
+    text-align: center;
+}
+
+
+#date{
+    color:#E42C64;
+}
+
+
+.menu {
+  overflow: hidden;    
+  background-image: url("../Archivos/sidebar.png");
+  background-size: cover;
+  background-attachment: fixed;
+  position: absolute;
+  text-decoration: none;
+  font-family: 'Segoe UI';
+  font-size: 20px;
+  color: black;
+  width: 99%;
+  overflow: auto;
+  white-space: nowrap; 
+}
+
+
+.menu a {
+  display: inline-block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+
+.menu a:hover {
+  background-image: none;
+      background-color: rgb(46, 42, 42); 
+      color: white;
+}
+.menu a.activo 
+    {
+      background-image: none;
+      background-color: red; 
+      color: white;
+    }

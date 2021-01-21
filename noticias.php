@@ -15,12 +15,10 @@
             </tr>
     </table>
     <nav>
-        <table>
-            <td>   
-          <div class="menu" >
+    <div class="menu" >
           <a href="index.php">Inicio</a></li>          
           <a href="juegos.php">Juegos</a></li> 
-          <a class = "activo" href="noticias.html">Noticias</a></li> 
+          <a class = "activo" href="noticias.php">Noticias</a></li> 
           <a href="pago.html">Metodos de Pago</a></li> 
           <a href="cuenta.html">Mi cuenta</a></li> 
           <a href="apuestas.html">Quinielas de apuestas</a></li> 
@@ -28,16 +26,32 @@
           <a href="contacto.php">Contacto</a></li> 
           <a href="form1.php">Registro</a></li>
           </div>
-        </td>
+        <table>
+               
+          
+        
         <div class="esquina_der">
             <a href="logon.php">Iniciar sesion</a>
             </div>
         <td class ="cuerpo" width = "100%">
-            <h1>Noticias</h1>
-            Consultar Pagina de Noticias de deportes.<br>
-            <a href="https://www.jornada.com.mx/category/deportes.html">
-                <img class ="EjemImg" alt="Imagen de Prueba" src="Archivos/news.webp">
-            </a>
+            <div id="canvas">
+                <div id="heading">   
+                    <h3> Noticias en vivo de deportes <span id="selectionTitle">Informador MX</span></h3>
+                    <h4 id="date">
+                        <?php
+                        setlocale(LC_ALL, 'es_MX.utf8');
+                    echo"Fecha: ";
+                    echo(strftime('%d / %B / %Y'))
+                        ?>
+                    </h4>
+                </div>
+        
+                <div id="feed-textarea">
+                    <ul></ul>
+                </div>
+            </div>
+            <script src="https://static.sekandocdn.net/static/feednami/feednami-client-v1.1.js"></script>
+            <script src="app.js"></script>
         </td>
         <td></td> 
         </table>  
