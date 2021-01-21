@@ -205,7 +205,7 @@
                  $costo= $_REQUEST['Costo'];
                  $estatus= $_REQUEST['Estatus'];
                  $query1 = $mysqli->query("INSERT INTO `Productos` (`Deporte`, `Quiniela`, `Fecha`, `Costo`, `Estatus`) VALUES ('$deporte', '$quiniela', '$fecha', '$costo', '$estatus');");
-               echo "Insertado";
+               
                echo "<meta http-equiv=refresh content=1>";
             }
             ?>
@@ -221,7 +221,7 @@
                  $id = $_REQUEST['id'];
                  $query1 = $mysqli->query("DELETE FROM `Productos`.`Productos` WHERE  `id`=$id;");
                  $query2 = $mysqli->query("ALTER TABLE Productos AUTO_INCREMENT = 1;");
-                echo"Eliminado";
+                
                 echo "<meta http-equiv=refresh content=1>";
             }
                   
