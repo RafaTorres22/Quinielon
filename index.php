@@ -16,7 +16,7 @@
             </tr>          
     </table>
           <nav>
-           
+           <!--Menu de navegacion horizontal en la pagina   -->
           <div class="menu" >
           <a class = "activo" href="index.php">Inicio</a></li>          
           <a href="juegos.php">Juegos</a></li> 
@@ -30,6 +30,7 @@
           </div>
           <table>
           <div class = "esquina_der">
+            <!--  -->
           <?php
             $MostrarForm = TRUE;
             if($_POST)
