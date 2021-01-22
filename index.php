@@ -15,7 +15,7 @@
                 <td width= "0%"></td>
             </tr>          
     </table>
-    <nav>
+          <nav>
            
           <div class="menu" >
           <a class = "activo" href="index.php">Inicio</a></li>          
@@ -27,11 +27,10 @@
           <a href="acercade.html">Acerca de Nosotros</a></li>
           <a href="contacto.php">Contacto</a></li>
           <a href="form1.php">Registro</a></li>
-          <!-- <a href="test.php">Tests</a></li> -->
           </div>
-        <table>
-        <div class = "esquina_der">
-        <?php
+          <table>
+          <div class = "esquina_der">
+          <?php
             $MostrarForm = TRUE;
             if($_POST)
             {
@@ -104,7 +103,6 @@
          Página creada por Equipo 3 - Todos los derechos reservados</td>
          <td></td>
         </table>
-     </footer> 
-     
-    </body>
-</html>
+     </footer>    
+     </body>
+     </html>

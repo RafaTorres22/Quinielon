@@ -128,7 +128,7 @@
                    echo  "<td>$val<td/>";
                  }?>
         
-        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
 <input type="hidden" name="cmd" value="_xclick">
 <input type="hidden" name="business" value="rafa_torres@outlook.com">
 <input type="hidden" name="lc" value="US">
