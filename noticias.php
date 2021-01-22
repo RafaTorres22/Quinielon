@@ -4,6 +4,7 @@
         <meta charset="UTF-8"/>
         <meta name="description" content="titulo">
         <meta name="keywords" content="HTML5., CSS3, Javascript">
+        <meta name="viewport" content="width=device-width, initial scale= 1.0">
         <title>NOTICIAS - QUINIELON</title>
         <link href="Estilos/general.css" rel="stylesheet" type="text/css">
     </head>
@@ -50,8 +51,30 @@
                     <ul></ul>
                 </div>
             </div>
-            <script src="https://static.sekandocdn.net/static/feednami/feednami-client-v1.1.js"></script>
-            <script src="app.js"></script>
+            <?php feed("https://www.informador.mx/rss/deportes.xml") ?>
+            <?php
+function feed($feedURL){
+$i = 0; 
+$url = $feedURL; 
+$rss = simplexml_load_file($url); 
+    foreach($rss->channel->item as $item) 
+    { 
+    $link = $item->link;  
+    $title = $item->title;  
+    $description = strip_tags($item->description); 
+     if (strlen($description) > 400) 
+      { 
+       $stringCut = substr($description, 0, 200);                   
+       $description = substr($stringCut, 0, strrpos($stringCut, ' ')).'...';
+      }
+     if ($i < 20) 
+      { 
+       echo '<div class="cuadros1"><h4><a href="'.$link.'" target="_blank">'.$title.'</a></h4>'.$description.'<br><div class="time">';}
+       $i++;
+      }
+    echo '<div style="clear: both;"></div>';
+    }
+?>	
         </td>
         <td></td> 
         </table>  

@@ -4,6 +4,7 @@
          <meta charset="UTF-8"/>
          <meta name="description" content="titulo">
          <meta name="keywords" content="HTML5., CSS3, Javascript">
+         <meta name="viewport" content="width=device-width, initial scale= 1.0">
          <title>JUEGOS - QUINIELON</title>
          <link href="Estilos/general.css" rel="stylesheet" type="text/css">
          </head>
@@ -45,7 +46,7 @@
              <input type="text" id="usr" name="usr" value="">
              <label for="pass">Contraseña:</label>
              <input type="password" id="pass" name="pass" value=""><br>
-             <input type="submit" value="Iniciar Sesion">
+             <input type="submit" name ="submit_0"value="Iniciar Sesion">
              </form>
              <?php
             }
@@ -94,7 +95,7 @@
             Aqui va una seccion con los partidos que se van a disputar proximamente 
             para que el usuario pueda hacer sus apuestas comprando sus quinielas.<br>
             <div class = "productos"> 
-                <table>
+                <table id= "productos">
                     <colgroup>
                     <tr><th>Numero</th>
                     <th></th>
@@ -136,6 +137,14 @@
                  </table>
      
                  </div>
+                 <form method="POST">
+                 <input type = "submit" name="submit_3" id ="boton1" value="Ocultar Partidos pasados"/>
+                 </form>
+
+                 
+                 
+
+
                  <?php
                  if ($id ==1)
                  {
@@ -154,7 +163,7 @@
                      <label for = "Quiniela">Quiniela: </label>
                       <input name = "Quiniela" type="text" id=Quiniela maxlenght="50" required/>
                      <label for = "Fecha">Fecha de juego: </label>
-                     <input name = "Fecha" id="Fecha" type="datetime-local" min = "2021-01-20T00:00">
+                     <input name = "Fecha" id="Fecha" type="datetime-local" >
                      <label for ="Costo">Costo</label>
                      <input name = "Costo" type="text" id=Costo maxlenght="15" required/>
                      <label for ="estatus">Estatus </label>
@@ -162,7 +171,7 @@
                      <option value = "Activo">Activo</option>
                      <option value = "Inactivo">Inactivo</option>
                      </select>
-                     <input type = "submit" value="Añadir"/> <br>
+                     <input type = "submit" name ="submit_1" value="Añadir"/> <br>
                      </form>
                      <p id="isc">
                      Eliminar Juego:
@@ -185,13 +194,17 @@
                     }
                     ?>
                      </select>
-                     <input type = "submit" name="submit_1" value="Eliminar"/>
+                     <input type = "submit" name="submit_2" value="Eliminar"/>
                      </form>
+
+
+
+
                      <?php
                       }
                      ?>
                      <?php
-                      if($_POST)
+                      if($_POST[submit_1])
             {
                 $mysqli = new mysqli("127.0.0.1", "rafa", "12345", "Productos", 3306);
                   if ($mysqli->connect_errno) 
@@ -204,13 +217,13 @@
                  $costo= $_REQUEST['Costo'];
                  $estatus= $_REQUEST['Estatus'];
                  $query1 = $mysqli->query("INSERT INTO `Productos` (`Deporte`, `Quiniela`, `Fecha`, `Costo`, `Estatus`) VALUES ('$deporte', '$quiniela', '$fecha', '$costo', '$estatus');");
-               
-               echo "<meta http-equiv=refresh content=1>";
+                 echo"Insertado";
+                 echo "<meta http-equiv=refresh content=1>";
             }
             ?>
             <?php
                 
-                 if($_POST[submit_1])
+                if($_POST[submit_2])
               {
                 $mysqli = new mysqli("127.0.0.1", "rafa", "12345", "Productos", 3306);
                   if ($mysqli->connect_errno) 
@@ -220,10 +233,65 @@
                  $id = $_REQUEST['id'];
                  $query1 = $mysqli->query("DELETE FROM `Productos`.`Productos` WHERE  `id`=$id;");
                  $query2 = $mysqli->query("ALTER TABLE Productos AUTO_INCREMENT = 1;");
-                
+                 echo"Eliminado";
                 echo "<meta http-equiv=refresh content=1>";
             }
                   
+                 ?>
+                 <?php
+                 if($_POST[submit_3])
+                 {
+                  echo "<script>document.getElementById('productos').remove();</script>";
+                  echo "<script>document.getElementById('boton1').remove();</script>";
+                  ?>
+                  <div class = "productos">
+                    <table id= "productos">
+                    <colgroup>
+                    <tr><th>Numero</th>
+                    <th></th>
+                    <th>Deporte</th>
+                    <th></th>
+                    <th>Quiniela</th>
+                    <th></th>
+                    <th>Fecha de Juego</th>
+                    <th></th>
+                    <th>Costo</th>
+                    <th></th>
+                    <th>Estatus</th>
+                    
+                    <th>Ingresar</th>
+                    <th></th>
+                    </tr>
+                    <?php
+                  $mysqli = new mysqli("127.0.0.1", "rafa", "12345", "Productos");
+                  if ($mysqli->connect_errno) 
+                 {
+                 echo "Error al conectar a MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
+                 }
+                 $sql = "select * from Productos WHERE Fecha >= NOW();"; 
+                 $res = $mysqli->query($sql);
+                   while ($row = $res->fetch_assoc()) 
+                 {
+                 echo "<tr>";
+                 foreach($row as $ind => $val)
+                 {      
+                   echo  "<td>$val<td/>";
+                 }?>
+        
+                 <input type="button" onclick="alert('No tienes suficiente dinero pobre :v')" value="Comprar">
+                 <?php
+                 echo "<tr/>";
+                 } 
+                  ?>
+     
+                 </table>
+                 
+                </div>
+                <form method="POST">
+                 <input type = "submit" name="submit_3" id ="boton1" value="Ocultar Partidos pasados"/>
+                 </form>
+                  <?php
+                 }               
                  ?>
                  </p>
                  </div>    
