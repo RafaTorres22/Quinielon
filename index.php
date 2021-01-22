@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+    <!-- Seccion Head  -->
     <head>
         <meta charset="UTF-8"/>
         <meta name="description" content="titulo">
@@ -8,6 +9,7 @@
         <title>QUINIELON</title>
         <link href="Estilos/general.css" rel="stylesheet" type="text/css">
     </head>
+    <!-- Banner principal de la pagina -->
     <table border="0">
             <tr>
                 <td width= "0%"></td>
@@ -30,7 +32,7 @@
           </div>
           <table>
           <div class = "esquina_der">
-            <!--  -->
+            <!-- Codigo para ocultar el form del login al iniciar sesion -->
           <?php
             $MostrarForm = TRUE;
             if($_POST)
@@ -50,6 +52,7 @@
             <?php
             } 
             {
+                //Consulta de usuarios en la base de datos
             if($_POST)
             {
                 $mysqli = new mysqli("127.0.0.1", "rafa", "12345", "login2", 3306);
@@ -75,6 +78,7 @@
                     $query2->data_seek(0);
                     $fila = $query2->fetch_assoc();
                     $Des=$fila['Descripcion'];
+                    //Mensaje de bienvenida a l usuario
                     echo "<br>Bienvenido $Des<br>";
                     echo "$usrBD<br>"; 
                     $fecha =new DateTime('NOW');
@@ -87,6 +91,7 @@
             }
             ?>
             </div>
+            <!-- cuerpo de la pagina web que contiene informacion sobre la misma -->
         <td class ="cuerpo" width = "100%">
           <h1>Apuestas de la Liga MX</h1>
           Apuesta por tu equipo favorito, y si la suerte esta a tu favor, seras ganador! 
@@ -96,7 +101,7 @@
         <td></td> 
         </table>  
     </nav>
-    
+    <!-- footer de la pagina --> 
         <footer>
             <table>
        <td></td> 

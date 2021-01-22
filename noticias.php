@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+    <!-- Seccion Head  -->
     <head>
         <meta charset="UTF-8"/>
         <meta name="description" content="titulo">
@@ -8,6 +9,7 @@
         <title>NOTICIAS - QUINIELON</title>
         <link href="Estilos/general.css" rel="stylesheet" type="text/css">
     </head>
+    <!-- Banner principal de la pagina -->
     <table border="0">
             <tr>
                 <td width= "0%"></td>
@@ -17,6 +19,7 @@
     </table>
     <nav>
     <div class="menu" >
+        <!--Menu de navegacion horizontal en la pagina   -->
           <a href="index.php">Inicio</a></li>          
           <a href="juegos.php">Juegos</a></li> 
           <a class = "activo" href="noticias.php">Noticias</a></li> 
@@ -28,9 +31,6 @@
           <a href="form1.php">Registro</a></li>
           </div>
         <table>
-               
-          
-        
         <div class="esquina_der">
             <a href="logon.php">Iniciar sesion</a>
             </div>
@@ -46,40 +46,41 @@
                         ?>
                     </h4>
                 </div>
-        
                 <div id="feed-textarea">
                     <ul></ul>
                 </div>
             </div>
             <?php feed("https://www.informador.mx/rss/deportes.xml") ?>
             <?php
-function feed($feedURL){
-$i = 0; 
-$url = $feedURL; 
-$rss = simplexml_load_file($url); 
-    foreach($rss->channel->item as $item) 
-    { 
-    $link = $item->link;  
-    $title = $item->title;  
-    $description = strip_tags($item->description); 
-     if (strlen($description) > 400) 
-      { 
-       $stringCut = substr($description, 0, 200);                   
-       $description = substr($stringCut, 0, strrpos($stringCut, ' ')).'...';
-      }
-     if ($i < 20) 
-      { 
-       echo '<div class="cuadros1"><h4><a href="'.$link.'" target="_blank">'.$title.'</a></h4>'.$description.'<br><div class="time">';}
-       $i++;
-      }
-    echo '<div style="clear: both;"></div>';
-    }
-?>	
+            //Funcion para mostrar las noticias en vivo
+           function feed($feedURL){
+              $i = 0; 
+              $url = $feedURL; 
+              $rss = simplexml_load_file($url); 
+           foreach($rss->channel->item as $item) 
+           { 
+               $link = $item->link;  
+               $title = $item->title;  
+               $description = strip_tags($item->description); 
+            if (strlen($description) > 400) 
+             { 
+              $stringCut = substr($description, 0, 200);                   
+              $description = substr($stringCut, 0, strrpos($stringCut, ' ')).'...';
+             }
+            if ($i < 20) 
+              { 
+               echo '<div class="cuadros1"><h4><a href="'.$link.'" target="_blank">'.$title.'</a></h4>'.$description.'<br><div class="time">';
+              }
+               $i++;
+            }
+            echo '<div style="clear: both;"></div>';
+        }
+       ?>	
         </td>
         <td></td> 
         </table>  
     </nav>
-    
+    <!-- footer de la pagina --> 
         <footer>
             <table>
        <td></td> 

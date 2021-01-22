@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
     <head>
+   <!-- Seccion Head  -->
         <meta charset="UTF-8"/>
         <meta name="description" content="titulo">
         <meta name="keywords" content="HTML5., CSS3, Javascript">
@@ -8,6 +9,7 @@
         <title>REGISTRO - QUINIELON</title>
         <link href="Estilos/general.css" rel="stylesheet" type="text/css">
     </head>
+   <!-- Banner principal de la pagina -->
     <table border="0">
             <tr>
                 <td width= "0%"></td>
@@ -16,7 +18,7 @@
             </tr>
     </table>
     <nav>
-          
+          <!--Menu de navegacion horizontal en la pagina   -->
           <div class="menu" >
           <a href="index.php">Inicio</a></li>          
           <a href="juegos.php">Juegos</a></li> 
@@ -33,10 +35,10 @@
             <a href="logon.php">Iniciar sesion</a>
             </div>
         <td class ="cuerpo" width = "100%">
-            
+            <!-- Cuerpo de la pagina -->
             <p2><h2>Formulario de registro</h2></p2>
             <p>Escribe tus datos de usuario en el siguiente formulario </p>
-        
+        <!-- Formulario de alta de Usuarios -->
             <form method="POST">
                 <p id="isc">
                     <label for="usuario">Usuario: </label>
@@ -80,6 +82,7 @@
                 </p>
             </form>
             <?php
+            //Insercion de datos del formulario en la base de datos
             if($_POST)
             {
                 $mysqli = new mysqli("127.0.0.1", "rafa", "12345", "login2", 3306);
@@ -103,7 +106,7 @@
         <td></td> 
         </table>  
     </nav>
-    
+    <!-- footer de la pagina -->
         <footer>
             <table>
        <td></td> 

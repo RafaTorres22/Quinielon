@@ -1,13 +1,16 @@
 <!DOCTYPE html>
          <html lang="es">
+         <!-- Seccion Head  -->
           <head>
          <meta charset="UTF-8"/>
          <meta name="description" content="titulo">
          <meta name="keywords" content="HTML5., CSS3, Javascript">
          <meta name="viewport" content="width=device-width, initial scale= 1.0">
+         <!-- titulo de la pagina -->
          <title>JUEGOS - QUINIELON</title>
          <link href="Estilos/general.css" rel="stylesheet" type="text/css">
          </head>
+         <!-- Banner principal de la pagina -->
          <table border="0">
             <tr>
                 <td width= "0%"></td>
@@ -16,7 +19,7 @@
             </tr>
     </table>
     <nav>
-           
+           <!-- Barra de navegacion horizontal -->
           <div class="menu" >
           <a href="index.php">Inicio</a></li>          
           <a class = "activo" href="juegos.php">Juegos</a></li> 
@@ -27,9 +30,8 @@
           <a href="acercade.html">Acerca de Nosotros</a></li>
           <a href="contacto.php">Contacto</a></li> 
           <a href="form1.php">Registro</a></li>
-          <a href="test.php">tests</a></li>
           </div>
-          
+          <!-- Codigo para ocultar el formulario al iniciar sesion -->
           <table>
         <div class = "esquina_der">
         <?php
@@ -52,6 +54,7 @@
             }
 
             {
+              // Consulta a la base de datos del login
             if($_GET)
             {
                 $mysqli = new mysqli("127.0.0.1", "rafa", "12345", "login2", 3306);
@@ -62,12 +65,14 @@
                 $usuario= $_REQUEST['usr'];
                 $pass= $_REQUEST['pass'];
                 $query1 = $mysqli->query("SELECT * FROM usr WHERE usr.Usuario='$usuario' AND Contra='$pass'");
+                //mensaje de error al hacer login fallido
                 if($query1->num_rows != 1)
                 {  
                      echo "<br>Usuario y/o Contraseña incorrectos. Intente de nuevo";               
                      echo "<meta http-equiv=\"refresh\" content=\"3;url=http://rafa.torres.ddns.net\juegos.php/>";
                 }
                 else
+                //mensaje para el login exitoso 
                 {
                     $query1->data_seek(0);
                     $fila = $query1->fetch_assoc();
@@ -77,7 +82,7 @@
                     $query2->data_seek(0);
                     $fila = $query2->fetch_assoc();
                     $Des=$fila['Descripcion'];
-                    
+                    //mensaje de bienvenida
                     echo "<br>Bienvenido $Des<br>";
                     echo "$usrBD<br>"; 
                     $fecha =new DateTime('NOW');
@@ -90,6 +95,7 @@
             }
             ?>
             </div>
+            <!-- tabla de productos de la pagina web -->
          <td class ="cuerpo" width = "100%">
             <h1>Juegos Actuales</h1>
             Aqui va una seccion con los partidos que se van a disputar proximamente 
@@ -113,6 +119,7 @@
                     <th></th>
                     </tr>
                     <?php
+                    // Conexion para llenar los datos de la pagina mediante la base de datos
                   $mysqli = new mysqli("127.0.0.1", "rafa", "12345", "Productos");
                   if ($mysqli->connect_errno) 
                  {
@@ -127,7 +134,7 @@
                  {      
                    echo  "<td>$val<td/>";
                  }?>
-        
+ <!-- Generacion de los botones de compra de la pagina web -->       
 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
 <input type="hidden" name="cmd" value="_xclick">
 <input type="hidden" name="business" value="rafa_torres@outlook.com">
@@ -148,24 +155,19 @@
                  echo "<tr/>";
                  } 
                   ?>
-     
                  </table>
-     
                  </div>
+                 <!-- Boton para ocultar los partidos pasados -->
                  <form method="POST">
                  <input type = "submit" name="submit_3" id ="boton1" value="Ocultar Partidos pasados"/>
                  </form>
-
-                 
-                 
-
-
                  <?php
                  if ($id ==1)
                  {
                      ?>
                      <div class = registro>
                      <p id="isc">
+                     <!-- Form para registrar un nuevo partido en la pagina -->
                       Registrar nuevo Juego:<br>
                      <form method="POST">
                      <label for = "Deporte">Deporte: </label>
@@ -189,9 +191,11 @@
                      <input type = "submit" name ="submit_1" value="Añadir"/> <br>
                      </form>
                      <p id="isc">
+                     <!-- Form para eliminar un partido de la pagina -->
                      Eliminar Juego:
                      <form method="POST">
                      <select name = "id" id= "Numero">               
+                     <!-- Conexion para obtener los id de productos -->
                      <?php
                       $mysqli = new mysqli("127.0.0.1", "rafa", "12345", "Productos");
                       if ($mysqli->connect_errno) 
@@ -211,14 +215,11 @@
                      </select>
                      <input type = "submit" name="submit_2" value="Eliminar"/>
                      </form>
-
-
-
-
                      <?php
                       }
                      ?>
                      <?php
+                     //Metodo de Inserccion de n producto a la base de datos
                       if($_POST[submit_1])
             {
                 $mysqli = new mysqli("127.0.0.1", "rafa", "12345", "Productos", 3306);
@@ -237,7 +238,7 @@
             }
             ?>
             <?php
-                
+                //metodo de borrado de un producto de la pagina
                 if($_POST[submit_2])
               {
                 $mysqli = new mysqli("127.0.0.1", "rafa", "12345", "Productos", 3306);
@@ -254,6 +255,7 @@
                   
                  ?>
                  <?php
+                 //Metodo para ocultar partidos anteriores
                  if($_POST[submit_3])
                  {
                   echo "<script>document.getElementById('productos').remove();</script>";
@@ -292,31 +294,30 @@
                  {      
                    echo  "<td>$val<td/>";
                  }?>
-        
-        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-<input type="hidden" name="cmd" value="_xclick">
-<input type="hidden" name="business" value="rafa_torres@outlook.com">
-<input type="hidden" name="lc" value="US">
-<input type="hidden" name="item_name" value="Item de Prueba">
-<input type="hidden" name="amount" value="20.00">
-<input type="hidden" name="currency_code" value="MXN">
-<input type="hidden" name="button_subtype" value="services">
-<input type="hidden" name="no_note" value="0">
-<input type="hidden" name="tax_rate" value="0.000">
-<input type="hidden" name="shipping" value="0.00">
-<input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynowCC_LG.gif:NonHostedGuest">
-<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-</form>
-
+                 <!--Integracion con Paypal -->
+                 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                 <input type="hidden" name="cmd" value="_xclick">
+                 <input type="hidden" name="business" value="rafa_torres@outlook.com">
+                 <input type="hidden" name="lc" value="US">
+                 <input type="hidden" name="item_name" value="Item de Prueba">
+                 <input type="hidden" name="amount" value="20.00">
+                 <input type="hidden" name="currency_code" value="MXN">
+                 <input type="hidden" name="button_subtype" value="services">
+                 <input type="hidden" name="no_note" value="0">
+                 <input type="hidden" name="tax_rate" value="0.000">
+                 <input type="hidden" name="shipping" value="0.00">
+                 <input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynowCC_LG.gif:NonHostedGuest">
+                 <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                 <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                 </form>
                  <?php
                  echo "<tr/>";
                  } 
                   ?>
-     
                  </table>
                  
                 </div>
+                <!-- boton para ocultar partidos pasados -->
                 <form method="POST">
                  <input type = "submit" name="submit_3" id ="boton1" value="Ocultar Partidos pasados"/>
                  </form>
@@ -331,7 +332,8 @@
                   </nav>
                  <footer>
                  <table>
-                 <td></td> 
+                 <td></td>
+                 <!-- footer de la pagina --> 
                  <td class = "footer" width = 100%> Copyright&copy; 2020 - 
                   Página creada por Equipo 3 - Todos los derechos reservados</td>
                  <td></td>

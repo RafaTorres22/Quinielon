@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="es">
+    <!-- Seccion Head  -->
     <head>
         <meta charset="UTF-8"/>
         <meta name="description" content="titulo">
         <meta name="keywords" content="HTML5., CSS3, Javascript">
         <meta name="viewport" content="width=device-width, initial scale= 1.0">
+        <!-- titulo de la pagina -->
         <title>CONTACTO - QUINIELON</title>
         <link href="Estilos/general.css" rel="stylesheet" type="text/css">
     </head>
+    <!-- Banner principal de la pagina -->
     <table border="0">
             <tr>
                 <td width= "0%"></td>
@@ -16,7 +19,7 @@
             </tr>
     </table>
     <nav>
-           
+           <!-- Barra de navegacion horizontal -->
           <div class="menu" >
           <a href="index.php">Inicio</a></li>          
           <a href="juegos.php">Juegos</a></li> 
@@ -28,6 +31,7 @@
           <a class = "activo" href="contacto.php">Contacto</a></li> 
           <a href="form1.php">Registro</a></li>
           </div>
+          <!-- Formulario de Contacto  -->
           <table>   
         <td class ="cuerpo" width = "100%">
             <h1>Contacto</h1>
@@ -45,6 +49,7 @@
             <input type="submit" value="Enviar">
             </form>  
             <?php
+            //Envio de formulario a la base de datos
             if($_POST)
             {
                 $mysqli = new mysqli("127.0.0.1", "rafa", "12345", "login2", 3306);
@@ -65,7 +70,7 @@
         <td></td> 
         </table>  
     </nav>
-    
+    <!-- footer de la pagina -->
         <footer>
             <table>
        <td></td> 
